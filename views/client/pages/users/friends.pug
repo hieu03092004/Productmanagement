@@ -1,0 +1,28 @@
+extends ../../layouts/default
+include ../../mixins/box-head.pug
+block main
+    .container.my-3
+        include ../../partials/list-btn-users.pug
+        .row
+            .col-12
+                +box-head("Danh sách bạn bè")
+        .row(data-users-friend)
+            each user in users
+                .col-6(user-id=user.id)
+                    .box-user
+                        .inner-avatar
+                            img(
+                                src=user.avatar?user.avatar:"/images/avatar.jpg"
+                                alt=user.fullName
+                            )
+                        .inner-info
+                            .inner-name #{user.fullName}
+                            .inner-buttons
+                                    a(
+                                        class="btn  btn-sm btn-primary mr-1"
+                                        href=`/chat/${user.roomChatId}`
+                                    ) Nhắn tin
+                        .inner-status(status=user.statusOnline)
+                            <i class="fa-solid fa-circle"></i>
+    block script
+        script(type="module" src="/Js/user.js")

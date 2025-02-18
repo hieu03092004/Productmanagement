@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        title #{pageTitle}
+        link(link rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" )
+        link(rel="stylesheet",href="/css/style.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        //- file-upload-with-preview
+        link(rel="stylesheet",href="https://unpkg.com/file-upload-with-preview/dist/style.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.css")
+    body
+        include ../partials/header.pug
+
+        block main
+        
+        include ../partials/footer.pug
+
+        script(src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js")
+        script(type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js") 
+        //- file-upload-with-preview
+        script(src="https://unpkg.com/file-upload-with-preview/dist/file-upload-with-preview.iife.js")
+        //- SocketIO
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.js") 
+        script(src="/socket.io/socket.io.js")
+        script(src="/Js/socket.js")
+        script(src="/Js/script.js")
+        block script
+
