@@ -41,9 +41,9 @@ app.use(
 // end tiny mce
 const port = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: false }));
-app.set("views", "./views");
+app.set("views", `${_dirname}/views`);
 app.set("view engine", "pug");
-app.use(express.static("public"));
+app.use(express.static(`${__dirname}/public`));
 app.use(methodOverride("_method"));
 //route
 route(app);
