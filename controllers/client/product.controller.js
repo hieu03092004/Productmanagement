@@ -10,9 +10,9 @@ module.exports.index = async (req, res) => {
   }).sort({ position: "desc" });
   const newProducts = productsHelper.priceNewProducts(products);
   console.log(newProducts);
-  return res.json({
-    success: true,
-    data: newProducts,
+  res.render("client/pages/products/index.pug", {
+    pageTitle: "Danh sách sản phẩm",
+    products: newProducts,
   });
 };
 //[GET]/products/:slug
