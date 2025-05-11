@@ -23,3 +23,7 @@ module.exports.index = async (req, res) => {
     productsNew: newProductsNew,
   });
 };
+module.exports.test = async (req, res) => {
+  // lay ra san pham noi bat
+  res.send("Day la trang test")
+};
